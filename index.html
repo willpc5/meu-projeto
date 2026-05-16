@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <header>
+        <h1>Willams Silva, Desenvolvedor Web</h1>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#projetos">Projetos</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </header>
+
+    <main id="home">
+
+        <section id="sobre">
+            <h2>Sobre Mim</h2>
+            <p>Sou um desenvolvedor web apaixonado por criar experiências digitais
+               incríveis. Com experiência em HTML, CSS e JavaScript, 
+               estou sempre buscando aprender novas tecnologias e aprimorar
+               minhas habilidades.</p>
+
+            <article id="projetos">
+                <h2>Projetos</h2>
+                <ul>
+                    <li><strong>Projeto 1:</strong> Site de Portfólio Pessoal - Um site responsivo para mostrar meus projetos e habilidades.</li>
+                    <li><strong>Projeto 2:</strong> Aplicação de Tarefas - Uma aplicação web para gerenciar tarefas diárias com funcionalidades de CRUD.</li>
+                    <li><strong>Projeto 3:</strong> Blog Pessoal - Um blog onde compartilho minhas experiências e aprendizados em desenvolvimento web.</li>
+                </ul> 
+        </section>
+
+        <section id="contato">
+            <h2>Contato</h2>
+            <h3>Preencha o formulário abaixo:</h3>
+
+            <form>
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" placeholder="Digite o seu nome:" />
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Digite o seu e-mail:" />
+
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" placeholder="Digite a sua mensagem:"></textarea>
+                
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+
+    </main>
+
+</body>
+</html>
