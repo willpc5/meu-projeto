@@ -19,41 +19,38 @@
         </ul>
     </header>
 
-    <main id="home">
+    <main class="container-principal">
 
-        <section id="sobre">
-            <h2>Sobre Mim</h2>
-            <p>Sou um desenvolvedor web apaixonado por criar experiências digitais
-               incríveis. Com experiência em HTML, CSS e JavaScript, 
-               estou sempre buscando aprender novas tecnologias e aprimorar
-               minhas habilidades.</p>
+    <section id="sobre">
+        <h2>Sobre Mim</h2>
+        <p>Sou um desenvolvedor web apaixonado por criar experiências digitais
+           incríveis. Com experiência em HTML, CSS e JavaScript, 
+           estou sempre buscando aprender novas tecnologias e aprimorar
+           minhas habilidades.</p>
 
-            <article id="projetos">
-                <h2>Projetos</h2>
-                <ul>
-                    <li><strong>Projeto 1:</strong> Site de Portfólio Pessoal - Um site responsivo para mostrar meus projetos e habilidades.</li>
-                    <li><strong>Projeto 2:</strong> Aplicação de Tarefas - Uma aplicação web para gerenciar tarefas diárias com funcionalidades de CRUD.</li>
-                    <li><strong>Projeto 3:</strong> Blog Pessoal - Um blog onde compartilho minhas experiências e aprendizados em desenvolvimento web.</li>
-                </ul> 
-        </section>
+        <article id="projetos">
+            <h2>Projetos</h2>
+            <ul>
+                <li><strong>Projeto 1:</strong> Site de Portfólio Pessoal...</li>
+                <li><strong>Projeto 2:</strong> Aplicação de Tarefas...</li>
+                <li><strong>Projeto 3:</strong> Blog Pessoal...</li>
+            </ul> 
+        </article> 
+    </section>
 
-        <section id="contato">
-            <h2>Contato</h2>
-            <h3>Preencha o formulário abaixo:</h3>
+    <section id="contato">
+        <h2>Contato</h2>
+        <h3>Preencha o formulário abaixo:</h3>
+        <form>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" placeholder="Digite o seu nome:" />
 
-            <form>
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="nome" placeholder="Digite o seu nome:" />
-
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="Digite o seu e-mail:" />
-
-                <label for="mensagem">Mensagem:</label>
-                <textarea id="mensagem" name="mensagem" placeholder="Digite a sua mensagem:"></textarea>
-                
-                <button type="submit">Enviar</button>
-            </form>
-        </section>
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" placeholder="Digite a sua mensagem:"></textarea>
+            
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
 
     </main>
 

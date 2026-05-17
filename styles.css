@@ -58,7 +58,6 @@ main {
 
 section {
     background: #fff;
-    padding: 30px;
     margin-bottom: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
@@ -71,7 +70,24 @@ h2 {
     margin-bottom: 20px;
 }
 
-/* Lista de Projetos */
+.container-principal {
+    display: flex; 
+    justify-content: space-between; 
+    gap: 40px; 
+    padding: 20px;
+    width: 100%;            
+    max-width: 1400px;      
+    margin: 0 auto;
+}
+
+#sobre, #contato {
+    flex: 1; 
+    padding: 50px;
+    background-color: #fafafa;
+    border-radius: 8px;
+}
+
+
 #projetos ul {
     list-style: none;
 }
@@ -95,12 +111,9 @@ label {
     font-weight: bold;
 }
 
-input, textarea {
+input, textarea, button {
+    margin-bottom: 15px;
     padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 1rem;
 }
 
 textarea {
@@ -122,4 +135,39 @@ button {
 
 button:hover {
     background: #2980b9;
+}
+
+/* Responsividade */
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+    header ul, li {
+        flex-direction: row;
+        gap: 5px;
+        font-zize: 0.9rem;
+        margin: 0;
+        padding: 0;
+    }
+    .container-principal {
+        flex-direction: column;
+        gap: 20px;
+        padding: 10px;
+    }
+    #sobre, #contato {
+        width: 100%;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 420px) {
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    #sobre, #contato {
+        padding: 15px;
+    }
 }
