@@ -12,7 +12,7 @@ body {
     padding: 20px;
 }
 
-/* Cabeçalho e Navegação */
+/* Cabeçalho e Navegação 
 header {
     background: #2c3e50;
     color: #fff;
@@ -25,6 +25,8 @@ header {
     align-items: center;
     padding: 10px 10%;
 }
+
+*/
 
 header h1 {
     margin-bottom: 15px;
