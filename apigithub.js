@@ -1,1 +1,0 @@
-console.log("Teste de API do GitHub");
