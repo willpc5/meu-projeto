@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu Portfólio</title>
-    <link rel="stylesheet" href="styles.css" />
+    <!-- <link rel="stylesheet" href="styles.css" /> -->
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-slate-100 font-sans min-h-screen flex flex-col justify-between text-slate-700">
@@ -60,6 +60,24 @@
             <div id="resultado" class="mt-5 font-bold"></div>
     </section>
 
+    <section class="max-w-7xl mx-auto px-4 mt-16 mb-16 flex flex-col items-center justify-center w-full">
+    
+        <div id="github-profile" class="flex flex-col items-center text-center mb-10 invisible">
+            </div>
+
+        <div class="w-full max-w-md border-b border-slate-200 mb-10 text-center pb-2">
+            <h3 class="text-xl font-bold text-slate-800">Projetos Recentes</h3>
+        </div>
+
+        <div id="github-projects" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full justify-center justify-items-center">
+            <p id="loading-text" class="text-slate-400 text-sm animate-pulse text-center col-span-full py-6">
+                Carregando dados do GitHub...
+            </p>
+        </div>
+
+    </section>
+            
+
     </main>
 
     <footer class="w-full bg-slate-800 text-white text-center py-4 text-sm tracking-wide shadow-inner">
@@ -67,5 +85,6 @@
     </footer>
 
     <script src="./scripts.js"></script>
+    <script src="./apigithub.js"></script>
 </body>
 </html>
