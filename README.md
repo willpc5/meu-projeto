@@ -1,4 +1,4 @@
-# Meu Projeto - Sistema de Contatos Fullstack
+# Meu Projeto - Portifólio com formulário de contato
 
 Este é um projeto fullstack que consiste em um formulário de contato no frontend que envia informações para uma API Rest no backend, persistindo os dados em um banco de dados PostgreSQL.
 
