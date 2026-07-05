@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import prisma from '../prisma.js';
+import prisma from '../prismaClient.js';
 
 export class MensagemController {
   async create(req: Request, res: Response) {
