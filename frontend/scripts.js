@@ -1,7 +1,7 @@
 const form = document.getElementById('form');
 
 form.addEventListener('submit', async (event) => {
-  event.preventDefault(); // Impede a página de recarregar
+  event.preventDefault(); 
 
   const nome = document.getElementById('nome').value;
   const mensagem = document.getElementById('mensagem').value;
