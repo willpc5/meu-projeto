@@ -4,6 +4,6 @@ import { MensagemController } from '../controllers/mensagemController.js';
 const routes = Router();
 const mensagemController = new MensagemController();
 
-routes.post('contato', mensagemController.create);
+routes.post('/contato', mensagemController.create);
 
 export default routes;
