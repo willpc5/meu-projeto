@@ -1,3 +1,44 @@
+const form = document.getElementById('form');
+
+form.addEventListener('submit', async (event) => {
+  event.preventDefault(); // Impede a página de recarregar
+
+  const nome = document.getElementById('nome').value;
+  const mensagem = document.getElementById('mensagem').value;
+
+  try {
+    const response = await fetch('http://localhost:3000/contato', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ nome, mensagem })
+    });
+
+    if (response.ok) {
+      const resultado = await response.json();
+      alert('Mensagem enviada com sucesso!');
+      form.reset(); // Limpa o formulário
+    } else {
+      const erro = await response.json();
+      alert(`Erro ao enviar: ${erro.error}`);
+    }
+  } catch (error) {
+    console.error('Erro na requisição:', error);
+    alert('Não foi possível conectar ao servidor backend.');
+  }
+});
+
+
+
+
+
+
+
+
+
+
+/*
 const form = document.querySelector('#form');
 const nome = document.querySelector('#nome');
 const mensagem = document.querySelector('#mensagem');
@@ -29,3 +70,4 @@ form.addEventListener('reset', function() {
 
     resultado.classList.remove('text-green-600', 'text-red-600');
 })
+*/
