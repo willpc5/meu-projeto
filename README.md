@@ -1,4 +1,29 @@
-# Meu Projeto - Portifólio com formulário de contato
+# Meu Portfólio - Frontend
+
+## 🚀 Tecnologias utilizadas no projeto
+
+- HTML
+- Tailwind CSS
+- JavaScript
+
+---
+
+## 📂 Estrutura do projeto
+
+### `script.js`
+Responsável pela manipulação da DOM do formulário.
+
+### `apigithub.js`
+Responsável pela integração com a API do GitHub.
+
+---
+
+## 🌐 Acesse o projeto
+
+🔗 **Demo:**  
+https://willpc5.github.io/meu-projeto/frontend
+
+# Portifólio com formulário de contato, Backend
 
 Este é um projeto fullstack que consiste em um formulário de contato no frontend que envia informações para uma API Rest no backend, persistindo os dados em um banco de dados PostgreSQL.
 
