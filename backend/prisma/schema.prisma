@@ -18,3 +18,11 @@ model Mensagem {
   mensagem  String
   createdAt DateTime @default(now())
 }
+
+model Usuario {
+  id        String   @id @default(uuid())
+  email     String
+  senha     String
+  nome      String?
+  createdAt DateTime @default(now())
+}
