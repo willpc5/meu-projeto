@@ -21,7 +21,7 @@ model Mensagem {
 
 model Usuario {
   id        String   @id @default(uuid())
-  email     String
+  email     String   @unique
   senha     String
   nome      String?
   createdAt DateTime @default(now())
