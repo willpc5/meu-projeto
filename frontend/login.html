@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Admin</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+  <div class="bg-white p-8 rounded shadow-md w-80">
+    <h2 class="text-xl font-bold mb-4 text-center">Login Painel</h2>
+    <form id="formLogin" class="flex flex-col gap-3">
+      <input type="email" id="email" placeholder="E-mail" required class="p-2 border rounded">
+      <input type="password" id="senha" placeholder="Senha" required class="p-2 border rounded">
+      <button type="submit" class="bg-blue-600 text-white py-2 rounded">Entrar</button>
+    </form>
+    <p id="erro" class="text-red-500 text-sm mt-3 text-center"></p>
+  </div>
+
+  <script>
+    document.getElementById('formLogin').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = document.getElementById('email').value;
+      const senha = document.getElementById('senha').value;
+
+      const res = await fetch('http://localhost:3000/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include', // Envia e grava o cookie
+        body: JSON.stringify({ email, senha })
+      });
+
+      if (res.ok) {
+        window.location.href = 'admin.html';
+      } else {
+        const dados = await res.json();
+        document.getElementById('erro').innerText = dados.error || 'Erro ao logar';
+      }
+    });
+  </script>
+</body>
+</html>
