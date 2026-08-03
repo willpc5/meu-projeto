@@ -2,43 +2,74 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Painel de Mensagens</title>
+  <!-- Script do Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-gray-100 p-8">
-  <div class="max-w-4xl mx-auto">
-    <div class="flex justify-between items-center mb-6">
-      <h1 class="text-2xl font-bold">Mensagens do Formulário</h1>
-      <button id="btnLogout" class="bg-red-500 text-white px-4 py-2 rounded">Sair</button>
+<body class="bg-slate-100 min-h-screen">
+
+  <header class="bg-slate-800 text-white shadow-md">
+    <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-xl font-bold tracking-wide">Painel Administrativo</h1>
+      <button id="btnLogout" 
+              class="bg-red-600 hover:bg-red-700 text-white text-sm font-semibold px-4 py-2 rounded-lg transition duration-200">
+        Sair
+      </button>
     </div>
-    <div id="lista" class="flex flex-col gap-4"></div>
-  </div>
+  </header>
+
+  <!-- Conteúdo Principal -->
+  <main class="max-w-5xl mx-auto p-6">
+    <div class="flex justify-between items-center mb-6">
+      <h2 class="text-2xl font-bold text-slate-800">Mensagens Recebidas</h2>
+    </div>
+
+    <!-- Lista de Cards das Mensagens -->
+    <div id="lista" class="grid gap-4">
+      <p class="text-slate-500">Carregando mensagens...</p>
+    </div>
+  </main>
 
   <script>
     async function carregarMensagens() {
-      const res = await fetch('http://localhost:3000/contato', {
-        method: 'GET',
-        credentials: 'include'
-      });
+      try {
+        const res = await fetch('http://localhost:3000/contato', {
+          method: 'GET',
+          credentials: 'include'
+        });
 
-      if (res.status === 401) {
-        window.location.href = 'login.html'; // Se a sessão for inválida, joga para o login
-        return;
+        if (res.status === 401) {
+          window.location.href = 'login.html';
+          return;
+        }
+
+        const mensagens = await res.json();
+        const container = document.getElementById('lista');
+        container.innerHTML = '';
+
+        if (mensagens.length === 0) {
+          container.innerHTML = '<div class="bg-white p-6 rounded-lg shadow-sm border text-slate-500 text-center">Nenhuma mensagem cadastrada até o momento.</div>';
+          return;
+        }
+
+        mensagens.forEach(msg => {
+          const dataFormatada = new Date(msg.createdAt).toLocaleString('pt-BR');
+          
+          container.innerHTML += `
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 flex flex-col gap-2 transition hover:shadow-md">
+              <div class="flex justify-between items-center border-b pb-2 mb-2">
+                <span class="font-bold text-slate-800 text-lg">${msg.nome}</span>
+                <span class="text-xs text-slate-400 bg-slate-100 px-2 py-1 rounded">${dataFormatada}</span>
+              </div>
+              <p class="text-slate-600 leading-relaxed">${msg.mensagem}</p>
+            </div>
+          `;
+        });
+      } catch (err) {
+        document.getElementById('lista').innerHTML = '<p class="text-red-500 font-medium">Erro ao carregar mensagens do servidor.</p>';
       }
-
-      const mensagens = await res.json();
-      const container = document.getElementById('lista');
-      container.innerHTML = '';
-
-      mensagens.forEach(msg => {
-        container.innerHTML += `
-          <div class="bg-white p-4 rounded shadow">
-            <p><strong>Nome:</strong> ${msg.nome}</p>
-            <p><strong>Mensagem:</strong> ${msg.mensagem}</p>
-            <small class="text-gray-400">${new Date(msg.createdAt).toLocaleString()}</small>
-          </div>
-        `;
-      });
     }
 
     document.getElementById('btnLogout').addEventListener('click', async () => {
