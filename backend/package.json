@@ -30,7 +30,7 @@
     "typescript": "^6.0.3"
   },
   "prisma": {
-    "seed": "tsx prisma/seed.ts"
+  "seed": "npx tsx prisma/seed.ts"
   },
   "allowScripts": {
     "bcrypt@6.0.0": true
