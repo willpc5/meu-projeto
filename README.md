@@ -77,6 +77,8 @@ docker-compose up --build
 Frontend / Portfólio: http://localhost:8080
 
 Login Admin: http://localhost:8080/login.html
+email: admin@email.com
+senha: admin123
 
 API Backend: http://localhost:3000
 
