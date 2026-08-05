@@ -5,7 +5,7 @@ WORKDIR /app
 COPY package*.json ./
 COPY prisma ./prisma/
 
-RUN npm install
+RUN npm install && chmod +x node_modules/.bin/*
 
 COPY . .
 
@@ -15,5 +15,4 @@ RUN npm run build
 
 EXPOSE 3000
 
-# Aplica as migrations e inicia a API
 CMD ["sh", "-c", "npx prisma migrate deploy && npm start"]
