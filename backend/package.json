@@ -4,11 +4,11 @@
   "description": "",
   "main": "server.ts",
   "type": "module",
-  "scripts": {
-    "start": "tsx src/server.ts",
-    "dev": "tsx watch src/server.ts",
-    "build": "tsc"
-  },
+"scripts": {
+  "start": "node dist/server.js",
+  "dev": "tsx watch src/server.ts",
+  "build": "tsc"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
