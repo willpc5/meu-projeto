@@ -1,11 +1,19 @@
 FROM node:20-alpine
+
 WORKDIR /app
+
 COPY package*.json ./
 COPY prisma ./prisma/
-RUN npm install && chmod +x node_modules/.bin/*
+
+RUN npm install
+
 COPY . .
+
 RUN npx prisma generate
+
+RUN npm run build
+
 EXPOSE 3000
 
-# Aplica as migrations e em seguida roda o seed do admin
+# Aplica as migrations e inicia a API
 CMD ["sh", "-c", "npx prisma migrate deploy && npm start"]
