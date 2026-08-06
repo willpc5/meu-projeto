@@ -35,7 +35,7 @@
   <script>
     async function carregarMensagens() {
       try {
-        const res = await fetch('http://localhost:3000/contato', {
+        const res = await fetch('https://meu-projeto-production-799f.up.railway.app/contato', {
           method: 'GET',
           credentials: 'include'
         });
@@ -73,7 +73,7 @@
     }
 
     document.getElementById('btnLogout').addEventListener('click', async () => {
-      await fetch('http://localhost:3000/logout', { method: 'POST', credentials: 'include' });
+      await fetch('https://meu-projeto-production-799f.up.railway.app/logout', { method: 'POST', credentials: 'include' });
       window.location.href = 'login.html';
     });
 

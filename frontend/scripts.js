@@ -7,7 +7,7 @@ form.addEventListener('submit', async (event) => {
   const mensagem = document.getElementById('mensagem').value;
 
   try {
-    const response = await fetch('http://localhost:3000/contato', {
+    const response = await fetch('https://meu-projeto-production-799f.up.railway.app/contato', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

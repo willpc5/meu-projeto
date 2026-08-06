@@ -45,7 +45,7 @@
       const senha = document.getElementById('senha').value;
 
       try {
-        const res = await fetch('http://localhost:3000/login', {
+        const res = await fetch('https://meu-projeto-production-799f.up.railway.app/login', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           credentials: 'include',

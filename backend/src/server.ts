@@ -6,7 +6,7 @@ import routes from './routes/routes.js';
 const app = express();
 
 app.use(cors({
-  origin: ['http://127.0.0.1:5500', 'http://localhost:5500', 'http://localhost:8080'],
+  origin: ['http://127.0.0.1:5500', 'http://localhost:5500', 'http://localhost:8080', 'https://willpc5.github.io'],
   credentials: true
 }));
 
