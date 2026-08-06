@@ -9,6 +9,7 @@ form.addEventListener('submit', async (event) => {
   try {
     const response = await fetch('https://meu-projeto-production-799f.up.railway.app/contato', {
       method: 'POST',
+      credentials: "include",
       headers: {
         'Content-Type': 'application/json'
       },
