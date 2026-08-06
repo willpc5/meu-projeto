@@ -3,12 +3,8 @@ name: Deploy static content to Pages
 
 on:
   push:
-    branches:
-      - main
-    paths:
-      - "frontend/**"
+    branches: ["main"]
 
-  # Permite executar manualmente pela aba Actions
   workflow_dispatch:
 
 permissions:
@@ -37,7 +33,7 @@ jobs:
       - name: Upload frontend
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./frontend
+          path: "./frontend"
 
       - name: Deploy to GitHub Pages
         id: deployment
