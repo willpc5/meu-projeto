@@ -53,7 +53,7 @@
         });
 
         if (res.ok) {
-          window.location.href = 'admin.html';
+          window.location.href = './admin.html';
         } else {
           const dados = await res.json();
           document.getElementById('erro').innerText = dados.error || 'Erro ao logar';
