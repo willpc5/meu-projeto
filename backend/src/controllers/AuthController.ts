@@ -5,15 +5,15 @@ import prisma from '../prismaClient.js';
 export class AuthController {
   async login(req: Request, res: Response) {
     try {
-      const { usuario: nomeUsuario, senha } = req.body;
+      const { email, senha } = req.body;
 
       const usuario = await prisma.usuario.findUnique({
-        where: { usuario: nomeUsuario },
+        where: { email },
       });
 
       if (!usuario) {
         return res.status(401).json({
-          error: 'Usuário ou senha incorretos.',
+          error: 'E-mail ou senha incorretos.',
         });
       }
 
@@ -21,7 +21,7 @@ export class AuthController {
 
       if (!senhaValida) {
         return res.status(401).json({
-          error: 'Usuário ou senha incorretos.',
+          error: 'E-mail ou senha incorretos.',
         });
       }
 
