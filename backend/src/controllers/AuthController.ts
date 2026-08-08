@@ -7,7 +7,6 @@ async login(req: Request, res: Response) {
 try {
 const { email, senha } = req.body;
 
-```
   const usuario = await prisma.usuario.findUnique({ where: { email } });
   if (!usuario) {
     return res.status(401).json({ error: 'E-mail ou senha incorretos.' });
@@ -23,7 +22,6 @@ const { email, senha } = req.body;
 } catch (error) {
   return res.status(500).json({ error: 'Erro no servidor.' });
 }
-```
 
 }
 
